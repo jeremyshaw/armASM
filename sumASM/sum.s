@@ -1,14 +1,14 @@
     .data
     .balign 4
 string: .asciz "%d+%d=%d\n"
+errStr: .asciz "Error in usage\n"
 a:  .word   56
-b:  .word   2345
+b:  .word   57
 c:  .word   0
 
 .text
 .global main
 .extern printf
-
 
 
 threeVarPrinter:
@@ -56,7 +56,7 @@ main:
     push    {ip, lr}    @push ret addr, dummy reg
     
     @this is being used as loop counter
-    mov     r6, #3      @I think MOV is immediate?
+    mov     r6, #4      @I think MOV is immediate?
 
     bl      mathLoop    
 
